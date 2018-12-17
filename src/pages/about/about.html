@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      New Task
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <div class="months new-task">
+      <h4>New Task</h4>
+    </div> 
+    <div class="task-title light-purple" >
+      <ion-input type="text" placeholder="Task Title" [(ngModel)]="task.title" name="title"></ion-input>
+      <div class="delete-title dark-purple" id="title">&#10006;</div>
+    </div>
+    <div class="date-task">
+      <input type="date"  placeholder="Task Date" [(ngModel)]="task.date" name="date">
+      <div class="delete-title" id="date">&#10006;</div>
+    </div>
+    <div class="task-time light-pink">
+      <input type="time" placeholder="Task Time" [(ngModel)]="task.time" name="time">
+      <div class="delete-title dark-pink" id="time">&#10006;</div>
+    </div>
+    
+    <textarea name="" class="details-task light-green" [(ngModel)]="task.details" name="details"></textarea>
+    <div class="bloc-notif">
+      <label for="switch" class="notification">Add Notification Automatically</label>
+      <ion-toggle [(ngModel)]="task.notification" name="notification"></ion-toggle>
+    </div>
+    
+    <button class="valid-btn" ion-button clear (tap)="addTask()">Valider</button>
+  </div>
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tasks</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <ion-calendar [(ngModel)]="dateMulti"
+              [options]="optionsMulti"
+              [type]="type"
+              [format]="'YYYY-MM-DD'"
+              (monthChange)="monthChange($event)">
+    </ion-calendar>
+    <div class="tasks">
+      <div class="task light-{{task.class}}" *ngFor="let task of tasks; let i=index" (click)="detailsTask(task)" (swipe)="delete($event,task.id)">
+        <div class="img-task dark-{{task.class}}">{{days[i]}}</div>
+        <div class="title-task">{{task.title}}</div>
+        <div class="time-task">{{task.time}}</div>
+        <div [ngClass]="{'notification':true,'notification-active':task.notification }">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 459.334 459.334" xml:space="preserve" width="15px" height="25px">
+            <g>
+              <g>
+                <g>
+                  <path d="M175.216,404.514c-0.001,0.12-0.009,0.239-0.009,0.359c0,30.078,24.383,54.461,54.461,54.461     s54.461-24.383,54.461-54.461c0-0.12-0.008-0.239-0.009-0.359H175.216z" fill="#000"/>
+                  <path d="M403.549,336.438l-49.015-72.002c0-22.041,0-75.898,0-89.83c0-60.581-43.144-111.079-100.381-122.459V24.485     C254.152,10.963,243.19,0,229.667,0s-24.485,10.963-24.485,24.485v27.663c-57.237,11.381-100.381,61.879-100.381,122.459     c0,23.716,0,76.084,0,89.83l-49.015,72.002c-5.163,7.584-5.709,17.401-1.419,25.511c4.29,8.11,12.712,13.182,21.887,13.182     H383.08c9.175,0,17.597-5.073,21.887-13.182C409.258,353.839,408.711,344.022,403.549,336.438z" fill="#000"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="popup1" class="overlay">
+    <div class="popup" *ngIf="task">
+        <h4>{{task.title}}</h4>
+        <a id="close" (click)="closeDetails()">&times;</a>
+        <div class="content">
+            <p >{{task.details}}</p>
+            <div class="task-date">
+              <img src="assets/imgs/calendar-active.svg"> <span>{{task.date}}</span>
+              <img src="assets/imgs/clock.svg"><span>{{task.time}}</span>
+            </div>
+        </div>
+    </div>
+  </div>
+</ion-content>

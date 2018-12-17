@@ -1,0 +1,78 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+ion-content{
+    margin: 0;
+    background: linear-gradient(0deg, #2a3471, #146f8b) !important;
+    font-family: 'Nunito', sans-serif;
+}
+.light-purple{background: rgba(224, 205, 252, 0.7) !important;}
+.dark-purple{background: #8445f3 !important;}
+.light-orange{background: rgba(255, 207, 135, 0.7) !important;}
+.dark-orange{background: #d38e11 !important;}
+.light-pink{ background: rgba(241, 209, 198, 0.7) !important; }
+.dark-pink{  background: #e3a691 !important; }
+.light-blue{ background: rgba(174, 208, 234, 0.7)!important; }
+.dark-blue{  background: #65b4f0 !important; }
+.light-green{ background: rgba(120, 200, 196, 0.7)!important; }
+.dark-green{  background: #37918c !important; }
+.today{ border: 1px solid #e3a691; color: #e3a691; }
+.notification-active{background: #fff;  }
+.tabs-md .tabbar {
+    background: linear-gradient(to left, #253162, #30406c);
+    height: 40px;
+}
+.toolbar-background-md{background: linear-gradient(to left, #253162, #30406c);}
+.toolbar-title-md,.bar-button-default-md, h2 {
+    color: #e7e6bd;
+    font-family: 'Nunito', sans-serif;
+}
+.tabs-md .tab-button-icon{
+    color: #fff;
+}
+.content {
+    display: flex;
+    flex-flow: column;
+    overflow: auto;
+    width: 100%;
+}
+.task{z-index: 99;}
+.task, .category, .task-title, .details-task {
+    display: flex;
+    align-items: center;
+    background: rgba(152, 199, 234, 0.7);
+    border-radius: 70px;
+    color: #fff;
+    margin-bottom: 10px;
+    height: 35px;
+    cursor: pointer;
+}
+.tasks,.categories {
+    width: 90%;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-flow: column;
+}
+.img-task, .img-category, .delete-title {
+    margin-right: 10px;
+    height: 100%;
+    width: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+}
